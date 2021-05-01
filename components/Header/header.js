@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styles from './header.module.scss'
 import { useAuth } from '../../contexts/authContext'
 import { clientRedirect } from '../../lib/redirect'
+import { isValidUser } from '../../lib/user'
 
 const Header = () => {
     const [user, setUser] = useAuth()
@@ -11,14 +12,14 @@ const Header = () => {
             method: 'GET',
             credentials: 'include'
         })
-        setUser()
+        setUser({})
         clientRedirect('/')
     }
 
     return(
         <nav className={styles.navbar}>
             <Link href="/"><a className={styles.navbarBrand}>Logo</a></Link>
-            {user ? 
+            {isValidUser(user) ? 
             <ul className={styles.navbarNav}>
                 <li className={styles.navbarLink}><Link href="/feeds"><a>Home</a></Link></li>
                 <li className={styles.navbarLink}><Link href="/messaging"><a>Messaging</a></Link></li>

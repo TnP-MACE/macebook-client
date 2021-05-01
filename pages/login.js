@@ -3,6 +3,7 @@ import SEO from '../components/seo'
 import Layout from '../components/Layout/layout'
 import {useAuth} from '../contexts/authContext'
 import {clientRedirect, serverRedirect} from '../lib/redirect'
+import { isValidUser } from '../lib/user'
 
 const Login = () => {
     const [username, updateUsername] = useState("charlotteli")
@@ -10,7 +11,7 @@ const Login = () => {
     const [user, setUser] = useAuth()
 
     useEffect(() => {
-        if(user) clientRedirect('/feeds')
+        if(isValidUser(user)) clientRedirect('/feeds')
     }, [user])
 
     const handleClick = async (e) => {

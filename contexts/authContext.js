@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { isValidUser } from '../lib/user'
 
 const AuthContext = React.createContext()
 
 export const AuthProvider = ({children}) => {
-    const [user, setUser] = useState()
+    const [user, setUser] = useState({})
     
     useEffect(() => {
-        if(!user){
+        if(!isValidUser(user)){
             fetch(`${process.env.API}/profile`, {
                 method: 'GET',
                 credentials: 'include'

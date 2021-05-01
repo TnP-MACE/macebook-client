@@ -1,0 +1,30 @@
+.container{
+    margin-top: 1rem;
+}
+
+.profile{
+    border: 1px solid black;
+    min-height: 250px;
+    text-align: center;
+    padding: 1rem 0;
+
+    img{
+        display: block;
+        width: 50%;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+}
+
+.ads{
+    border: 1px solid black;
+    min-height: 250px;
+}
+
+.feed{
+    border: 1px solid black;
+    padding: 1rem 0.5rem;
+    &:not(:last-child){
+        margin-bottom: 1rem;
+    }
+}

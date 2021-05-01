@@ -1,13 +1,38 @@
 import Layout from '../components/Layout/layout'
 import SEO from '../components/seo'
+import { useAuth } from '../contexts/authContext'
 import {clientRedirect, serverRedirect} from '../lib/redirect'
+import styles from '../styles/pages/feeds.module.scss'
 
 const Feeds = ({feeds}) => {
+    const [user, setUser] = useAuth()
+
     return(
         <Layout>
             <SEO title="Feeds | Macebook"/>
-            <h1>Feeds</h1>
-            {feeds.map((f, idx) => <div key={idx}>{f}</div>)}
+            <div className={`row ${styles.container}`}>
+
+                <div className="col-2">
+                    <div className={styles.profile}>
+                        <img src={user.picture}/>
+                        <h3>{user.username}</h3>
+                        <p>My Description</p>
+                    </div>
+                </div>
+
+                <div className="col-8">
+                    <div className={styles.feeds}>
+                        {feeds.map((f, idx) => <div className={styles.feed} key={idx}>{f}</div>)}
+                    </div>
+                </div>
+
+                <div className="col-2">
+                    <div className={styles.ads}>
+                        Ads
+                    </div>
+                </div>
+
+            </div>
         </Layout>
     )
 }
@@ -39,6 +64,8 @@ const handleFetch = async (ctx, route) => {
             "feed 2",
             "feed 3",
             "feed 4",
+            "feed 5",
+            "feed 6",
         ]
     }
 }

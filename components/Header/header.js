@@ -18,44 +18,44 @@ const Header = () => {
 
     return (
         <nav className={styles.navbar}>
-            <Link href="/">
-                <a className={styles.navbarBrand}>Logo</a>
-            </Link>
-            {isValidUser(user) ? (
-                <ul className={styles.navbarNav}>
-                    <li className={styles.navbarLink}>
-                        <Link href="/feeds">
-                            <a>Home</a>
-                        </Link>
-                    </li>
-                    <li className={styles.navbarLink}>
-                        <Link href="/messaging">
-                            <a>Messaging</a>
-                        </Link>
-                    </li>
-                    <li className={styles.navbarLink}>
-                        <Link href="/notifications">
-                            <a>Notifications</a>
-                        </Link>
-                    </li>
-                    <li className={styles.navbarLink}>
-                        <Link href="/settings">
-                            <a>Settings</a>
-                        </Link>
-                    </li>
-                    <li className={styles.navbarLink}>
-                        <button onClick={handleLogout}>Logout</button>
-                    </li>
-                    <li className={styles.navbarLink}>
-                        <Link href={`/user/${user.username}`}>
-                            <a>
-                                <img className={styles.picture} src={user.picture} alt="User" />
-                            </a>
-                        </Link>
-                    </li>
-                </ul>
-            ) : (
-                <div>
+            <div className={`container ${styles.container}`}>
+                <Link href="/">
+                    <a className={styles.navbarBrand}>Logo</a>
+                </Link>
+                {isValidUser(user) ? (
+                    <ul className={styles.navbarNav}>
+                        <li className={styles.navbarLink}>
+                            <Link href="/feeds">
+                                <a>Home</a>
+                            </Link>
+                        </li>
+                        <li className={styles.navbarLink}>
+                            <Link href="/messaging">
+                                <a>Messaging</a>
+                            </Link>
+                        </li>
+                        <li className={styles.navbarLink}>
+                            <Link href="/notifications">
+                                <a>Notifications</a>
+                            </Link>
+                        </li>
+                        <li className={styles.navbarLink}>
+                            <Link href="/settings">
+                                <a>Settings</a>
+                            </Link>
+                        </li>
+                        <li className={styles.navbarLink}>
+                            <button onClick={handleLogout}>Logout</button>
+                        </li>
+                        <li className={styles.navbarLink}>
+                            <Link href={`/user/${user.username}`}>
+                                <a>
+                                    <img className={styles.picture} src={user.picture} alt="User" />
+                                </a>
+                            </Link>
+                        </li>
+                    </ul>
+                ) : (
                     <ul className={styles.navbarNav}>
                         <li className={styles.navbarLink}>
                             <Link href="/login">
@@ -68,8 +68,8 @@ const Header = () => {
                             </Link>
                         </li>
                     </ul>
-                </div>
-            )}
+                )}
+            </div>
         </nav>
     )
 }

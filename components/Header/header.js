@@ -16,24 +16,60 @@ const Header = () => {
         clientRedirect('/')
     }
 
-    return(
+    return (
         <nav className={styles.navbar}>
-            <Link href="/"><a className={styles.navbarBrand}>Logo</a></Link>
-            {isValidUser(user) ? 
-            <ul className={styles.navbarNav}>
-                <li className={styles.navbarLink}><Link href="/feeds"><a>Home</a></Link></li>
-                <li className={styles.navbarLink}><Link href="/messaging"><a>Messaging</a></Link></li>
-                <li className={styles.navbarLink}><Link href="/notifications"><a>Notifications</a></Link></li>
-                <li className={styles.navbarLink}><Link href="/settings"><a>Settings</a></Link></li>
-                <li className={styles.navbarLink} onClick={handleLogout}><a>Logout</a></li>
-                <li className={styles.navbarLink}><Link href={`/user/${user.username}`}><a><img className={styles.picture} src={user.picture}/></a></Link></li>
-            </ul> :
-            <div>
+            <Link href="/">
+                <a className={styles.navbarBrand}>Logo</a>
+            </Link>
+            {isValidUser(user) ? (
                 <ul className={styles.navbarNav}>
-                    <li className={styles.navbarLink}><Link href="/login"><a>Login</a></Link></li>
-                    <li className={styles.navbarLink}><Link href="/registration"><a>Signup</a></Link></li>
+                    <li className={styles.navbarLink}>
+                        <Link href="/feeds">
+                            <a>Home</a>
+                        </Link>
+                    </li>
+                    <li className={styles.navbarLink}>
+                        <Link href="/messaging">
+                            <a>Messaging</a>
+                        </Link>
+                    </li>
+                    <li className={styles.navbarLink}>
+                        <Link href="/notifications">
+                            <a>Notifications</a>
+                        </Link>
+                    </li>
+                    <li className={styles.navbarLink}>
+                        <Link href="/settings">
+                            <a>Settings</a>
+                        </Link>
+                    </li>
+                    <li className={styles.navbarLink} onClick={handleLogout}>
+                        <a>Logout</a>
+                    </li>
+                    <li className={styles.navbarLink}>
+                        <Link href={`/user/${user.username}`}>
+                            <a>
+                                <img className={styles.picture} src={user.picture} />
+                            </a>
+                        </Link>
+                    </li>
                 </ul>
-            </div>}
+            ) : (
+                <div>
+                    <ul className={styles.navbarNav}>
+                        <li className={styles.navbarLink}>
+                            <Link href="/login">
+                                <a>Login</a>
+                            </Link>
+                        </li>
+                        <li className={styles.navbarLink}>
+                            <Link href="/registration">
+                                <a>Signup</a>
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            )}
         </nav>
     )
 }

@@ -2,9 +2,9 @@ import Layout from '../components/Layout/layout'
 import SEO from '../components/seo'
 
 const Settings = (props) => {
-    return(
+    return (
         <Layout>
-            <SEO title="Settings | Macebook"/>
+            <SEO title="Settings | Macebook" />
             <h1>Settings</h1>
             <h3>Profile</h3>
             <button>Change Username</button>

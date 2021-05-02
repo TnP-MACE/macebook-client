@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const PRIVATE_KEY = "abkdhneji452ds8"
+const PRIVATE_KEY = 'abkdhneji452ds8'
 
 exports.getUserData = (user) => {
     return {
@@ -15,4 +15,4 @@ exports.getUserData = (user) => {
 
 exports.generateToken = (user) => {
     return jwt.sign({ username: user.username }, PRIVATE_KEY)
-};
+}

@@ -1,4 +1,4 @@
-import {Router, useRouter} from 'next/router'
+import { Router, useRouter } from 'next/router'
 import Layout from '../../components/Layout/layout'
 import SEO from '../../components/seo'
 import { clientRedirect, serverRedirect } from '../../lib/redirect'
@@ -7,9 +7,9 @@ import styles from '../../styles/pages/profile.module.scss'
 const UserProfile = (props) => {
     // const router = useRouter()
     const user = props.user
-    return(
+    return (
         <Layout>
-            <SEO title={`${user.name} | Macebook`}/>
+            <SEO title={`${user.name} | Macebook`} />
             <img src={user.picture}></img>
             <h1>{user.name}</h1>
             <address>
@@ -21,7 +21,7 @@ const UserProfile = (props) => {
     )
 }
 
-export async function getServerSideProps(ctx){
+export async function getServerSideProps(ctx) {
     const cookie = ctx.req.headers.cookie
 
     const res = await fetch(`${process.env.API}/users/${ctx.params.username}`, {
@@ -30,29 +30,29 @@ export async function getServerSideProps(ctx){
         }
     })
 
-    if(res.status === 401 && !ctx.req){
+    if (res.status === 401 && !ctx.req) {
         clientRedirect('/login')
-        return {props:{}}
+        return { props: {} }
     }
 
-    if(res.status === 401 && ctx.req){
+    if (res.status === 401 && ctx.req) {
         serverRedirect('/login')
-        return {props:{}}
+        return { props: {} }
     }
 
-    if(res.status === 404 && !ctx.req){
+    if (res.status === 404 && !ctx.req) {
         clientRedirect('/404')
-        return {props:{}}
+        return { props: {} }
     }
 
-    if(res.status === 404 && ctx.req){
+    if (res.status === 404 && ctx.req) {
         serverRedirect('/404')
-        return {props:{}}
+        return { props: {} }
     }
-    
+
     const user = await res.json()
-    return{
-        props: {user}
+    return {
+        props: { user }
     }
 }
 export default UserProfile

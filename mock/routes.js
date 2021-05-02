@@ -103,6 +103,19 @@ router.get('/logout', auth, (req, res) => {
   }))
   res.status(200).send()
 })
+router.post('/registration',(req,res)=>{
+  let newuserdetails ={
+      name:req.body.name,
+      username:req.body.username,
+      phone:req.body.phonenumber,
+      location:req.body.location,
+      email:req.body.email,
+      password:req.body.password
+     }
+  
+  console.log(newuserdetails)
+
+  })
 
 router.post('/registration',(req,res)=>{
 let newuserdetails =new user({

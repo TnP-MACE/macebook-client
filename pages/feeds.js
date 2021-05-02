@@ -3,6 +3,7 @@ import SEO from '../components/seo'
 import { useAuth } from '../contexts/authContext'
 import {clientRedirect, serverRedirect} from '../lib/redirect'
 import styles from '../styles/pages/feeds.module.scss'
+import TweetBox from '../components/Feeds/TweetBox/tweetbox'
 
 const Feeds = ({feeds}) => {
     const [user, setUser] = useAuth()
@@ -12,7 +13,7 @@ const Feeds = ({feeds}) => {
             <SEO title="Feeds | Macebook"/>
             <div className={`row ${styles.container}`}>
 
-                <div className="col-2">
+                <div className="col-3">
                     <div className={styles.profile}>
                         <img src={user.picture}/>
                         <h3>{user.username}</h3>
@@ -20,13 +21,14 @@ const Feeds = ({feeds}) => {
                     </div>
                 </div>
 
-                <div className="col-8">
+                <div className="col-6">
+                    <TweetBox/>
                     <div className={styles.feeds}>
                         {feeds.map((f, idx) => <div className={styles.feed} key={idx}>{f}</div>)}
                     </div>
                 </div>
 
-                <div className="col-2">
+                <div className="col-3">
                     <div className={styles.ads}>
                         Ads
                     </div>

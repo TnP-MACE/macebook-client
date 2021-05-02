@@ -1,0 +1,74 @@
+.tweetbox{
+    margin-bottom: 1rem;
+}
+
+.container{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+}
+
+.pictureContainer{
+    margin-right: 0.5rem;
+    
+    .picture{
+        height: 45px;
+        border-radius: 50%;
+        display: block;
+    }
+}
+
+.contentContainer{
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.textareaWrapper{
+    position: relative;
+    padding: 12.5px 0;
+
+    .placeholder{
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+
+        &.visible{
+            display: block;
+        }
+
+        &.invisible{
+            display: none;
+        }
+    }
+
+    .textareaInnerWrapper{
+        width: 100%;
+    }
+
+    .textarea{
+        // position: absolute;
+        overflow-wrap: break-word;
+        outline: none;
+        border: none;
+        width: 100%;
+        z-index: 1;
+    
+        // &:empty:before{
+        //     content: attr(placeholder);
+        //     pointer-events: none;
+        //     display: block; /* For Firefox */
+        // } 
+    }
+}
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .submit{
+        background-color: blue;
+    }
+}

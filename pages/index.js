@@ -2,7 +2,7 @@ import SEO from '../components/seo'
 import Layout from '../components/Layout/layout'
 import styles from '../styles/pages/home.module.scss'
 
-export default function Home() {
+const Home = () => {
     return (
         <Layout>
             <SEO title="Macebook" />
@@ -10,3 +10,5 @@ export default function Home() {
         </Layout>
     )
 }
+
+export default Home

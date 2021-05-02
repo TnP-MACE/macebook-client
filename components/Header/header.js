@@ -19,7 +19,7 @@ const Header = () => {
     return (
         <nav className={styles.navbar}>
             <div className={`container ${styles.container}`}>
-                <Link href="/">
+                <Link href={isValidUser(user) ? '/feeds' : '/'}>
                     <a className={styles.navbarBrand}>Logo</a>
                 </Link>
                 {isValidUser(user) ? (
@@ -27,11 +27,6 @@ const Header = () => {
                         <li className={styles.navbarLink}>
                             <Link href="/feeds">
                                 <a>Home</a>
-                            </Link>
-                        </li>
-                        <li className={styles.navbarLink}>
-                            <Link href="/messaging">
-                                <a>Messaging</a>
                             </Link>
                         </li>
                         <li className={styles.navbarLink}>

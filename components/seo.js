@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 const SEO = ({ title, description }) => {
@@ -8,6 +9,11 @@ const SEO = ({ title, description }) => {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
     )
+}
+
+SEO.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string
 }
 
 export default SEO

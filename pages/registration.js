@@ -1,7 +1,6 @@
 import { useFormik } from 'formik'
 import SEO from '../components/seo'
 import Layout from '../components/Layout/layout'
-import Router from 'next/router'
 
 const validate = (values) => {
     const errors = {}
@@ -46,7 +45,7 @@ const SignupForm = () => {
         validate,
         onSubmit: (values) => {
             console.warn(values)
-            const res = fetch(`${process.env.API}/registration`, {
+            fetch(`${process.env.API}/registration`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(values),

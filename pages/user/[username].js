@@ -1,16 +1,13 @@
-import { Router, useRouter } from 'next/router'
+import PropTypes from 'prop-types'
 import Layout from '../../components/Layout/layout'
 import SEO from '../../components/seo'
 import { clientRedirect, serverRedirect } from '../../lib/redirect'
-import styles from '../../styles/pages/profile.module.scss'
 
-const UserProfile = (props) => {
-    // const router = useRouter()
-    const user = props.user
+const UserProfile = ({ user }) => {
     return (
         <Layout>
             <SEO title={`${user.name} | Macebook`} />
-            <img src={user.picture}></img>
+            <img src={user.picture} alt="User"></img>
             <h1>{user.name}</h1>
             <address>
                 <p>{user.email}</p>
@@ -19,6 +16,10 @@ const UserProfile = (props) => {
             </address>
         </Layout>
     )
+}
+
+UserProfile.propTypes = {
+    user: PropTypes.object
 }
 
 export async function getServerSideProps(ctx) {

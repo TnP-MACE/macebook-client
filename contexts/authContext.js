@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useContext, useEffect, useState } from 'react'
 import { isValidUser } from '../lib/user'
 
@@ -19,6 +20,10 @@ export const AuthProvider = ({ children }) => {
     }, [user])
 
     return <AuthContext.Provider value={[user, setUser]}>{children}</AuthContext.Provider>
+}
+
+AuthProvider.propTypes = {
+    children: PropTypes.any
 }
 
 export const useAuth = () => {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Layout from '../components/Layout/layout'
 import SEO from '../components/seo'
 import { useAuth } from '../contexts/authContext'
@@ -6,6 +7,7 @@ import styles from '../styles/pages/feeds.module.scss'
 import TweetBox from '../components/Feeds/TweetBox/tweetbox'
 
 const Feeds = ({ feeds }) => {
+    /* eslint-disable-next-line */
     const [user, setUser] = useAuth()
 
     return (
@@ -14,7 +16,7 @@ const Feeds = ({ feeds }) => {
             <div className={`row ${styles.container}`}>
                 <div className="col-3">
                     <div className={styles.profile}>
-                        <img src={user.picture} />
+                        <img src={user.picture} alt="User" />
                         <h3>{user.username}</h3>
                         <p>My Description</p>
                     </div>
@@ -37,6 +39,10 @@ const Feeds = ({ feeds }) => {
             </div>
         </Layout>
     )
+}
+
+Feeds.propTypes = {
+    feeds: PropTypes.array
 }
 
 Feeds.getInitialProps = async (ctx) => {

@@ -8,7 +8,7 @@ const Header = () => {
     const [user, setUser] = useAuth()
 
     const handleLogout = async () => {
-        const res = await fetch(`${process.env.API}/logout`, {
+        await fetch(`${process.env.API}/logout`, {
             method: 'GET',
             credentials: 'include'
         })
@@ -43,13 +43,13 @@ const Header = () => {
                             <a>Settings</a>
                         </Link>
                     </li>
-                    <li className={styles.navbarLink} onClick={handleLogout}>
-                        <a>Logout</a>
+                    <li className={styles.navbarLink}>
+                        <button onClick={handleLogout}>Logout</button>
                     </li>
                     <li className={styles.navbarLink}>
                         <Link href={`/user/${user.username}`}>
                             <a>
-                                <img className={styles.picture} src={user.picture} />
+                                <img className={styles.picture} src={user.picture} alt="User" />
                             </a>
                         </Link>
                     </li>

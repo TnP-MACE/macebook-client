@@ -1,7 +1,7 @@
 import Layout from '../components/Layout/layout'
 import SEO from '../components/seo'
 
-const Settings = (props) => {
+const Settings = () => {
     return (
         <Layout>
             <SEO title="Settings | Macebook" />

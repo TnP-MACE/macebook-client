@@ -1,7 +1,6 @@
+import PropTypes from 'prop-types'
 import Layout from '../components/Layout/layout'
 import SEO from '../components/seo'
-import Router from 'next/router'
-import styles from '../styles/pages/notifications.module.scss'
 import { clientRedirect, serverRedirect } from '../lib/redirect'
 
 const Notifications = ({ notifications }) => {
@@ -14,6 +13,10 @@ const Notifications = ({ notifications }) => {
             ))}
         </Layout>
     )
+}
+
+Notifications.propTypes = {
+    notifications: PropTypes.array
 }
 
 Notifications.getInitialProps = async (ctx) => {

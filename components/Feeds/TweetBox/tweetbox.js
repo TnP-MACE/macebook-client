@@ -4,11 +4,13 @@ import { useAuth } from '../../../contexts/authContext'
 import ContentEditable from 'react-contenteditable'
 
 const TweetBox = () => {
+    /* eslint-disable-next-line */
     const [user, setUser] = useAuth()
     const [text, setText] = useState('')
     const contentEditableRef = useRef('')
 
     const handleChange = (e) => {
+        /* eslint-disable-next-line */
         const regex = /^(\<div\>\<br\>\<\/div\>)$|^(\<br\>)$|^(\<\/br\>)$/
         console.log(e.target.value)
         console.log(regex.test(e.target.value))
@@ -25,7 +27,7 @@ const TweetBox = () => {
         <div className={styles.tweetbox}>
             <div className={styles.container}>
                 <div className={styles.pictureContainer}>
-                    <img src={user.picture} className={styles.picture} />
+                    <img src={user.picture} className={styles.picture} alt="User" />
                 </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.textareaWrapper}>

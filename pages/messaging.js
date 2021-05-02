@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types'
 import Layout from '../components/Layout/layout'
 import SEO from '../components/seo'
-import styles from '../styles/pages/messaging.module.scss'
 import { clientRedirect, serverRedirect } from '../lib/redirect'
 
 const Messaging = ({ messages }) => {
@@ -13,6 +13,10 @@ const Messaging = ({ messages }) => {
             ))}
         </Layout>
     )
+}
+
+Messaging.propTypes = {
+    messages: PropTypes.array
 }
 
 Messaging.getInitialProps = async (ctx) => {

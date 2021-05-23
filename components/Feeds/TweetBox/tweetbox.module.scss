@@ -3,7 +3,9 @@
 }
 
 .container{
-    border: 1px solid black;
+    border: 1px solid #C4C4C4;
+    border-radius: 12px;
+    background-color:rgb(238, 234, 234);
     display: flex;
     flex-direction: row;
     padding: 0.5rem;
@@ -11,7 +13,7 @@
 
 .pictureContainer{
     margin-right: 0.5rem;
-    
+    margin-top: 0.4rem;
     .picture{
         height: 45px;
         border-radius: 50%;
@@ -27,6 +29,11 @@
 .textareaWrapper{
     position: relative;
     padding: 12.5px 0;
+    border: 1px solid #C4C4C4;
+    border-radius: 24px;
+    background-color: white;
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
 
     .placeholder{
         position: absolute;
@@ -44,6 +51,7 @@
 
     .textareaInnerWrapper{
         width: 100%;
+        padding-left: 1rem;
     }
 
     .textarea{
@@ -66,9 +74,17 @@
 .buttons{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
+    justify-content: space-evenly;
+    
+    
+    
     .submit{
-        background-color: blue;
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        border-radius: 12px;
+        padding: 10px;    
+        margin: 20px;
+        cursor: pointer;
     }
 }

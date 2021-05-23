@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './tweetbox.module.scss'
 import { useAuth } from '../../../contexts/authContext'
 import ContentEditable from 'react-contenteditable'
+import InputOption from '../InputOption/InputOption'
+import ImageIcon from '@material-ui/icons/Image'
+import SubscriptionsIcon from '@material-ui/icons/Subscriptions'
+import EventNoteIcon from '@material-ui/icons/EventNote'
 
 const TweetBox = () => {
     /* eslint-disable-next-line */
@@ -35,7 +39,7 @@ const TweetBox = () => {
                             className={`${styles.placeholder} ${
                                 !text ? styles.visible : styles.invisible
                             }`}>
-                            Start a Post
+                            Add a Post
                         </div>
                         <div className={styles.textareaInnerWrapper}>
                             <ContentEditable
@@ -47,13 +51,12 @@ const TweetBox = () => {
                         </div>
                     </div>
                     <div className={styles.buttons}>
+                        <InputOption Icon={ImageIcon} title="Photo" />
+                        <InputOption Icon={SubscriptionsIcon} title="Video" />
+                        <InputOption Icon={EventNoteIcon} title="Event" />
+
                         <div>
-                            <button>Img</button>
-                            <button>Emoji</button>
-                            <button>Giphy</button>
-                        </div>
-                        <div>
-                            <button className={styles.submit}>Submit</button>
+                            <button className={styles.submit}>Share</button>
                         </div>
                     </div>
                 </div>

@@ -51,15 +51,13 @@ const TweetBox = () => {
                         </div>
                     </div>
                     <div className={styles.buttons}>
-                        
-                            <InputOption Icon={ImageIcon} title="Photo" />
-                            <InputOption Icon={SubscriptionsIcon} title="Video" />
-                            <InputOption Icon={EventNoteIcon} title="Event" />
-                        
+                        <InputOption Icon={ImageIcon} title="Photo" />
+                        <InputOption Icon={SubscriptionsIcon} title="Video" />
+                        <InputOption Icon={EventNoteIcon} title="Event" />
+
                         <div>
                             <button className={styles.submit}>Share</button>
-                        </div> 
-                        
+                        </div>
                     </div>
                 </div>
             </div>

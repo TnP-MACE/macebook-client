@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './InputOption.module.scss'
 
-const InputOption = ({Icon, title}) => {
-    return(
+// eslint-disable-next-line react/prop-types
+const InputOption = ({ Icon, title }) => {
+    return (
         <div className={styles.InputOption}>
-            <Icon/>
+            <Icon />
             <h5>{title}</h5>
         </div>
     )

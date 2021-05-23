@@ -5,6 +5,10 @@ import { useAuth } from '../contexts/authContext'
 import { clientRedirect, serverRedirect } from '../lib/redirect'
 import styles from '../styles/pages/feeds.module.scss'
 import TweetBox from '../components/Feeds/TweetBox/tweetbox'
+import Post from '../components/Feeds/post/post'
+//import img from '../images/pawel-czerwinski-vI5XwPbGvmY-unsplash.jpg'
+
+
 
 const Feeds = ({ feeds }) => {
     /* eslint-disable-next-line */
@@ -16,8 +20,11 @@ const Feeds = ({ feeds }) => {
             <div className={`row ${styles.container}`}>
                 <div className="col-3">
                     <div className={styles.profile}>
-                        <img src={user.picture} alt="User" />
-                        <h3>{user.username}</h3>
+                        <div className={styles.profile_top}>
+                            <img className={styles.coverimg} src="https://unsplash.com/photos/tSe4FaiYc8s"  alt="cover img" />
+                            <img className={styles.pic} src={user.picture} alt="User" />
+                            <h3>{user.username}</h3>
+                        </div>
                         <p>My Description</p>
                     </div>
                 </div>
@@ -27,7 +34,9 @@ const Feeds = ({ feeds }) => {
                     <div className={styles.feeds}>
                         {feeds.map((f, idx) => (
                             <div className={styles.feed} key={idx}>
-                                {f}
+                                
+                                <Post />
+                               
                             </div>
                         ))}
                     </div>

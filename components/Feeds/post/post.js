@@ -26,7 +26,7 @@ const Post = () => {
                     is all set to kickstart. Professional industrial experts will guide you all the
                     way throughout the session as the robots come to life before you. Buckle up
                     droid lovers and get your machine blood pumping as the curtains are raising for
-                    the extravaganza you’ve all been waiting #R2R
+                    the extravaganza you’ve all been waiting #R2R.
                 </p>
             </div>
             <div className={styles.post_pic}>
